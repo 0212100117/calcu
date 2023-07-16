@@ -1,0 +1,236 @@
+from tkinter import*
+import statistics
+from itertools import permutations
+root = Tk()
+root.geometry("1350x800+0+0")
+root.title("Stats Calculator")
+root.configure(background="#98FB98")
+
+
+Tops =Frame(root, width=1350, height=200, bd=16, relief="raise",)
+Tops.pack(side=TOP)
+Botto =Frame(root, width=1350, height=200, bd=16, relief="raise")
+Botto.pack(side=BOTTOM)
+
+lblInfo= Label(Tops, font=('Helvetica', 35, 'bold'), text="STATS Calculator", bd=15) .grid(row=0, column=0)
+
+inBotto1=Frame(Botto, width=650, height=700, relief="raise", background='#FFDEAD')
+inBotto1.pack(side=BOTTOM)
+
+inBotto2=Frame(Botto, width=650, height=400, relief="raise",)
+inBotto2.pack(side=BOTTOM)
+
+LF=Frame(inBotto2, width=1350, height=400, bd=16, relief="raise",)
+LF.pack(side=LEFT)
+RF=Frame(inBotto2, width=1350, height=400, bd=16, relief="raise",)
+RF.pack(side=RIGHT)
+
+Buttons=Frame(inBotto1, width=1350, height=100, bd=16, relief="raise")
+Buttons.pack(side=BOTTOM)
+AnsBotto2=Frame(inBotto1, width=1350, height=200, bd=16, relief="raise")
+AnsBotto2.pack(side=BOTTOM)
+
+def SUMM():
+    if var.get() == 1:
+        Qty1 = float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        SumUP = (Qty1+Qty2+Qty3+Qty4+Qty5+Qty6+Qty7+Qty8+Qty9+Qty10)/ 10
+        Total.set(SumUP)
+
+    elif var.get() == 2:
+            Qty1 = float(firstnum.get())
+            Qty2 = float(secondnum.get())
+            Qty3 = float(thirdnum.get())
+            Qty4 = float(fourthnum.get())
+            Qty5 = float(fifthnum.get())
+            Qty6 = float(sixthnum.get())
+            Qty7 = float(seventhnum.get())
+            Qty8 = float(eightnum.get())
+            Qty9 = float(ninethnum.get())
+            Qty10 = float(tenthnum.get())
+            SumUP = statistics.median([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10])
+            Total.set(SumUP)
+
+    elif var.get() == 3:
+        Qty1 = float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        SumUP = statistics.mode([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10])
+        Total.set(SumUP)
+
+    elif var.get() == 4:
+        Qty1 = float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        SumUP = max([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10]) - min([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10])
+        Total.set(SumUP)
+
+    elif var.get() == 5:
+        Qty1 = float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        SumUP = statistics.stdev([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10])
+        Total.set(SumUP)
+
+    elif var.get() == 6:
+        Qty1 = float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        SumUP = statistics.quantiles([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10])
+        Total.set(SumUP)
+
+
+    elif var.get() == 7:
+        Qty1 = float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        SumUP = statistics.variance([Qty1,Qty2,Qty3,Qty4,Qty5,Qty6,Qty7,Qty8,Qty9,Qty10])
+        Total.set(SumUP)
+
+    else:
+        Qty1=float(firstnum.get())
+        Qty2 = float(secondnum.get())
+        Qty3 = float(thirdnum.get())
+        Qty4 = float(fourthnum.get())
+        Qty5 = float(fifthnum.get())
+        Qty6 = float(sixthnum.get())
+        Qty7 = float(seventhnum.get())
+        Qty8 = float(eightnum.get())
+        Qty9 = float(ninethnum.get())
+        Qty10 = float(tenthnum.get())
+        Total.set(SumUP)
+
+def Exit():
+        root.destroy()
+        return
+
+def Reset():
+    firstnum.set("")
+    secondnum.set("")
+    thirdnum.set("")
+    fourthnum.set("")
+    fifthnum.set("")
+    sixthnum.set("")
+    seventhnum.set("")
+    eightnum.set("")
+    ninethnum.set("")
+    tenthnum.set("")
+
+    Total.set("")
+
+
+var = IntVar()
+firstnum=IntVar()
+secondnum=IntVar()
+thirdnum=IntVar()
+fourthnum=IntVar()
+fifthnum=IntVar()
+sixthnum=IntVar()
+seventhnum=IntVar()
+eightnum=IntVar()
+ninethnum=IntVar()
+tenthnum=IntVar()
+Total = IntVar()
+
+firstnum.set("")
+secondnum.set("")
+thirdnum.set("")
+fourthnum.set("")
+fifthnum.set("")
+sixthnum.set("")
+seventhnum.set("")
+eightnum.set("")
+ninethnum.set("")
+tenthnum.set("")
+
+Total.set("")
+
+Mean = Radiobutton(LF, text="Mean", variable=var, value=1, font=('Helvetica',11, 'bold')).grid(row=0, sticky=W)
+Median = Radiobutton(LF, text="Median", variable=var, value=2, font=('Helvetica',11, 'bold')).grid(row=1, sticky=W)
+Mode = Radiobutton(LF, text="Mode", variable=var, value=3, font=('Helvetica',11, 'bold')).grid(row=2, sticky=W)
+Range = Radiobutton(LF, text="Range", variable=var, value=4, font=('Helvetica',11, 'bold')).grid(row=3, sticky=W)
+SD = Radiobutton(RF, text="Standard Deviation", variable=var, value=5, font=('Helvetica',11, 'bold')).grid(row=4, sticky=W)
+Permutation = Radiobutton(RF, text="Quantiles", variable=var, value=6, font=('Helvetica',11, 'bold')).grid(row=5, sticky=W)
+Combination = Radiobutton(RF, text="Variance", variable=var, value=7, font=('Helvetica',11, 'bold')).grid(row=6, sticky=W)
+
+lblfirst= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter First DATA", fg="black", bd=10).grid(row=0, column=0, sticky=W)
+txtfirst = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=firstnum).grid(row=0, column=1)
+
+lblsecond= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Second DATA", fg="black", bd=10).grid(row=1, column=0, sticky=W)
+txtsecond = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=secondnum).grid(row=1, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Third DATA", fg="black", bd=10).grid(row=2, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=thirdnum).grid(row=2, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Fourth DATA", fg="black", bd=10).grid(row=4, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=fourthnum).grid(row=4, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Fifth DATA", fg="black", bd=10).grid(row=5, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=fifthnum).grid(row=5, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Sixth DATA", fg="black", bd=10).grid(row=6, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=sixthnum).grid(row=6, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Seventh DATA", fg="black", bd=10).grid(row=7, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=seventhnum).grid(row=7, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Eight DATA", fg="black", bd=10).grid(row=8, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=eightnum).grid(row=8, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Ninth DATA", fg="black", bd=10).grid(row=9, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=ninethnum).grid(row=9, column=1)
+
+lblD= Label(AnsBotto2, font=('Helvetica', 10, 'bold'), text="Enter Tenth DATA", fg="black", bd=10).grid(row=10, column=0, sticky=W)
+txtD = Entry(AnsBotto2, font=('Helvetica', 10, 'bold'), bd=2, width=10, bg='white', textvariable=tenthnum).grid(row=10, column=1)
+
+
+lblTotal= Label(AnsBotto2, font=('Helvetica', 13, "bold"), text="Generated Result is", fg="black", bd=16,justify = "left")
+lblTotal.grid(row=11, column=0, sticky=W)
+lAnswer = Label(AnsBotto2, font=('Helvetica', 13, 'bold'), bd=4, width=30, bg="white", textvariable=Total, relief='sunken').grid(row=11, column=1, sticky=W)
+SumUP=Button(Buttons, pady=2, bd=2, fg="black", font=('Helvetica', 10, 'bold'), command=SUMM, width=10, text= "Calculate", bg="white").grid(row=0, column=0)
+Reset=Button(Buttons, pady=2, bd=2, fg="black", font=('Helvetica', 10, 'bold'), command=Reset, width=10, text= "Reset", bg="white").grid(row=0, column=1)
+Exit=Button(Buttons, pady=2, bd=2, fg="black", font=('Helvetica', 10, 'bold'), command=Exit, width=10, text= "Exit", bg="white").grid(row=0, column=2)
+root.mainloop()
